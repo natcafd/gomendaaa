@@ -31,3 +31,11 @@ textContainer.addEventListener('click', () => {
         textDisplay.classList.add('fade-in');
     }, 500); // Timing matches the CSS animation duration
 });
+
+        // Ensuring the audio plays when the page is loaded
+        window.addEventListener('load', function() {
+            var audio = document.getElementById('background-audio');
+            audio.play().catch(function(error) {
+                console.log('Autoplay is not allowed, or audio playback failed:', error);
+            });
+        });
